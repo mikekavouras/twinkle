@@ -72,7 +72,7 @@ twinkle.js
 
 ## Locking
 
-If you want to "lock" an image in the grid, just give it's parent div a class of lock.
+If you want to "lock" an image in the grid, just give it's parent div a class of lock. This particular image will always remain static. Feel free to apply this class to as many images as you please.
     
     <div class="lock">
       <img src="image_path.jpg">
