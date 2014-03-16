@@ -1,6 +1,8 @@
 twinkle.js
 =======
 
+[demo](http://mikekavouras.com/twinkle)
+
 
 <table>
   <tr>
