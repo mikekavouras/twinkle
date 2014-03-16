@@ -2,12 +2,12 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Twinkle</title>
+  <title>twinkle.js</title>
 
   <link href="style.css" rel="stylesheet">
 
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
   <script src="twinkle.js"></script>
 </head>
 <body>
@@ -18,37 +18,38 @@
     <li>transition
       <ul>
         <li>fade, crossfade, slide, swap</li>
-        <li>default: fade</li>
+        <li><strong>default:</strong> fade</li>
       </ul>
     </li>
     <li>interval
       <ul>
         <li>Amount of time in between each "twinkle"</li>
-        <li>default: 2000</li>
+        <li><strong>default:</strong> 2000</li>
       </ul>
     </li>
     <li>transitionSpeed
     <ul>
       <li>Speed of "twinkle"</li>
-      <li>default: 1000</li>
+      <li><strong>default:</strong> 1000</li>
     </ul>
     <li>easingMethod
     <ul>
       <li>Easing method for "twinkle"</li>
       <li> <a href="http://gsgd.co.uk/sandbox/jquery/easing/">methods</a></li>
-      <li> default: 'easeOutQuint' </li>
+      <li><strong>default: 'easeOutQuint'</strong></li>
     </ul>
     <li>hidden
       <ul>
         <li>An array of image sources</li>
         <li>These are the image hidden by default</li>
+        <li><strong>default:</strong> []</li>
       </ul>
     </li>
     <li> direction
       <ul>
         <li>Direction for slide and swap transitions.</li>
         <li>If no direction is provided, twinkle.js will choose alternate between random directions</li>
-        <li>default: none</li>
+        <li><strong>default:</strong> none</li>
       </ul>
     </li>
   </ul>
