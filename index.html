@@ -12,7 +12,74 @@
 </head>
 <body>
 
+  <h1>Twinkle.js</h1>
+  <h4>features</h4>
+  <ul>
+    <li>transition
+      <ul>
+        <li>fade, crossfade, slide, swap</li>
+        <li>default: fade</li>
+      </ul>
+    </li>
+    <li>interval
+      <ul>
+        <li>Amount of time in between each "twinkle"</li>
+        <li>default: 2000</li>
+      </ul>
+    </li>
+    <li>transitionSpeed
+    <ul>
+      <li>Speed of "twinkle"</li>
+      <li>default: 1000</li>
+    </ul>
+    <li>easingMethod
+    <ul>
+      <li>Easing method for "twinkle"</li>
+      <li> <a href="http://gsgd.co.uk/sandbox/jquery/easing/">methods</a></li>
+      <li> default: 'easeOutQuint' </li>
+    </ul>
+    <li>hidden
+      <ul>
+        <li>An array of image sources</li>
+        <li>These are the image hidden by default</li>
+      </ul>
+    </li>
+    <li> direction
+      <ul>
+        <li>Direction for slide and swap transitions.</li>
+        <li>If no direction is provided, twinkle.js will choose alternate between random directions</li>
+        <li>default: none</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>example</h4>
+<pre>
+<code>
+$('#container').twinkle({
+  transition: 'slide',
+  interval: 3000,
+  transitionSpeed: 1200,
+  easeingMethod: 'easeOutQuint',
+  direction: 'left',
+  hidden: [
+    'path_to_image.jpg',
+    'path_to_image.jpg',
+    'path_to_image.jpg',
+    'path_to_image.jpg'
+  ]
+});
+</code>
+</pre>
+
   <h2>Fade</h2>
+<pre>
+<code>
+$('.fade').twinkle({
+  hidden: [ARRAY]
+});
+</code>
+</pre>
   <div class="avatars fade clearfix">
     <div class="avatar">
       <img src="https://pbs.twimg.com/profile_images/2044921128/finals_bigger.png">
@@ -77,6 +144,14 @@
   </div>
 
   <h2>Crossfade</h2>
+<pre>
+<code>
+$('.crossfade').twinkle({
+  hidden: [ARRAY],
+  transition: 'crossfade'
+});
+</code>
+</pre>
   <div class="avatars crossfade clearfix">
     <div class="avatar">
       <img src="https://pbs.twimg.com/profile_images/2044921128/finals_bigger.png">
@@ -141,6 +216,15 @@
   </div>
 
   <h2>Slide</h2>
+<pre>
+<code>
+$('.slide').twinkle({
+  hidden: [ARRAY],
+  transition: 'slide',
+  transitionSpeed: 1400
+});
+</code>
+</pre>
   <div class="avatars slide clearfix">
     <div class="avatar">
       <img src="https://pbs.twimg.com/profile_images/2044921128/finals_bigger.png">
@@ -205,6 +289,14 @@
   </div>
 
   <h2>Swap</h2>
+<pre>
+<code>
+$('.swap').twinkle({
+  hidden: [ARRAY],
+  transition: 'swap'
+});
+</code>
+</pre>
   <div class="avatars swap clearfix">
     <div class="avatar">
       <img src="https://pbs.twimg.com/profile_images/2044921128/finals_bigger.png">

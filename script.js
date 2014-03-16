@@ -9,22 +9,22 @@ $(document).ready(function() {
     "https://pbs.twimg.com/profile_images/3468757441/563cf294407c44f0e6ce0e49ae031e34_bigger.jpeg"
   ];
 
-  $('.fade').first().twinkle({
+  $('.fade').twinkle({
     hidden: hidden.slice(0)
   });
 
-  $('.crossfade').first().twinkle({
+  $('.crossfade').twinkle({
     hidden: hidden.slice(0),
     transition: 'crossfade'
   });
 
-  $('.slide').first().twinkle({
+  $('.slide').twinkle({
     hidden: hidden.slice(0),
     transition: 'slide',
     transitionSpeed: 1400
   });
 
-  $('.swap').first().twinkle({
+  $('.swap').twinkle({
     hidden: hidden.slice(0),
     transition: 'swap'
   });

@@ -84,7 +84,8 @@ TwinkleImageManager.prototype = {
     transition: 'fade',
     transitionSpeed: 1000,
     easingMethod: 'easeOutQuint',
-    hidden: []
+    hidden: [],
+    direction: null
   };
 
   $.fn.twinkle.twinkle = function($elem, opts, imageManager) {
@@ -134,6 +135,7 @@ TwinkleImageManager.prototype = {
     var anim = {};
     var dirs = ['left', 'right', 'top', 'bottom'];
     var dir = dirs[Math.floor(Math.random() * dirs.length)];
+    dir = opts.direction || dir;
     var start = (dir == 'top' || dir == 'left') ? -100 : 100;
     var d = (dir == 'top' || dir == 'bottom') ? 'top' : 'left';
     anim[d] = swap ? start + 'px' : -start + 'px';
