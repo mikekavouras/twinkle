@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>twinkle.js</title>
 
+  <link href="mike.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -13,57 +14,64 @@
 <body>
 
   <h1>Twinkle.js</h1>
-  <h4>features</h4>
-  <ul>
-    <li>transition
-      <ul>
-        <li><i>fade</i>, <i>crossfade</i>, <i>slide</i>, <i>swap</i></li>
-        <li><strong>default:</strong> fade</li>
-      </ul>
-    </li>
-    <li>interval
-      <ul>
-        <li>Amount of time in between each "twinkle"</li>
-        <li><strong>default:</strong> 2000</li>
-      </ul>
-    </li>
-    <li>transitionSpeed
-    <ul>
-      <li>Speed of "twinkle"</li>
-      <li><strong>default:</strong> 1000</li>
-    </ul>
-    <li>easingMethod
-    <ul>
-      <li>Easing method for "twinkle"</li>
-      <li> <a href="http://gsgd.co.uk/sandbox/jquery/easing/">methods</a></li>
-      <li><strong>default: 'easeOutQuint'</strong></li>
-    </ul>
-    <li>hidden
-      <ul>
-        <li>An array of image sources</li>
-        <li>The images that are initially hidden</li>
-        <li><strong>default:</strong> []</li>
-      </ul>
-    </li>
-    <li> direction
-      <ul>
-        <li>Direction for slide and swap transitions.</li>
-        <li>If no direction is provided, twinkle.js will choose alternate between random directions</li>
-        <li><strong>default:</strong> none</li>
-      </ul>
-    </li>
-  </ul>
+  <h3>Options</h3>
 
-  <h4>example</h4>
+  <table>
+    <thead>
+      <tr>
+        <td>options</td>
+        <td>description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><i>transition</i></td>
+        <td>"fade", "crossfade", "slide", "swap" <br> <strong>default: </strong>fade</td>
+      </tr>
+      <tr>
+        <td><i>interval</i></td>
+        <td>Amount of time in between each "twinkle" <br> <strong>default: </strong>2000</td>
+      </tr>
+      <tr>
+        <td><i>transitionSpeed</i></td>
+        <td>Speed of "twinkle" <br> <strong>default: </strong>1000</td>
+      </tr>
+      <tr>
+        <td><i>easingMethod</i></td>
+        <td>
+          Easing method for "twinkle" as found at <a href="http://gsgd.co.uk/sandbox/jquery/easing/">http://gsgd.co.uk/sandbox/jquery/easing/</a> <br>
+          <strong>default: </strong>"easeOutQuint"
+        </td>
+      </tr>
+      <tr>
+        <td><i>hidden</i></td>
+        <td>
+          An array of image sources. This array is the set of images that are initially hidden.<br>
+          <strong>default :</strong>[ ]
+        </td>
+      </tr>
+      <tr>
+        <td><i>direction</i></td>
+        <td>
+          Direction for "slide" and "swap" transitions. If no direction is provided, twinkle.js will choose random directions.<br>
+          <strong>default: </strong>none
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Example</h3>
+<div class="code">
+
 <pre>
 <code>
 $('#container').twinkle({
-  transition: 'slide',
-  interval: 3000,
-  transitionSpeed: 1200,
-  easingMethod: 'easeOutQuint',
-  direction: 'left',
-  hidden: [
+  transition : 'slide',
+  interval : 3000,
+  transitionSpeed : 1200,
+  easingMethod : 'easeOutQuint',
+  direction : 'left',
+  hidden : [
     'path_to_image.jpg',
     'path_to_image.jpg',
     'path_to_image.jpg',
@@ -72,8 +80,12 @@ $('#container').twinkle({
 });
 </code>
 </pre>
+</div>
 
-  <h2>Fade</h2>
+  <h3>Demo</h3>
+
+  <div class="code">
+<h4>Fade</h4>
 <pre>
 <code>
 $('.fade').twinkle({
@@ -81,6 +93,7 @@ $('.fade').twinkle({
 });
 </code>
 </pre>
+</div>
   <div class="avatars fade clearfix">
     <div class="avatar">
       <img src="https://pbs.twimg.com/profile_images/2044921128/finals_bigger.png">
@@ -144,7 +157,8 @@ $('.fade').twinkle({
     </div>
   </div>
 
-  <h2>Crossfade</h2>
+<div class="code">
+<h4>Crossfade</h4>
 <pre>
 <code>
 $('.crossfade').twinkle({
@@ -153,6 +167,8 @@ $('.crossfade').twinkle({
 });
 </code>
 </pre>
+</div>
+
   <div class="avatars crossfade clearfix">
     <div class="avatar">
       <img src="https://pbs.twimg.com/profile_images/2044921128/finals_bigger.png">
@@ -216,7 +232,8 @@ $('.crossfade').twinkle({
     </div>
   </div>
 
-  <h2>Slide</h2>
+<div class="code">
+<h4>Slide</h4>
 <pre>
 <code>
 $('.slide').twinkle({
@@ -226,6 +243,8 @@ $('.slide').twinkle({
 });
 </code>
 </pre>
+</div>
+
   <div class="avatars slide clearfix">
     <div class="avatar">
       <img src="https://pbs.twimg.com/profile_images/2044921128/finals_bigger.png">
@@ -289,7 +308,8 @@ $('.slide').twinkle({
     </div>
   </div>
 
-  <h2>Swap</h2>
+<div class="code">
+<h4>Swap</h4>
 <pre>
 <code>
 $('.swap').twinkle({
@@ -298,6 +318,8 @@ $('.swap').twinkle({
 });
 </code>
 </pre>
+</div>
+
   <div class="avatars swap clearfix">
     <div class="avatar">
       <img src="https://pbs.twimg.com/profile_images/2044921128/finals_bigger.png">
@@ -368,6 +390,7 @@ $('.swap').twinkle({
     images as you please.
   </p>
 
+<div class="code">
 <pre>
 <code>
 $('.lockers').twinkle({
@@ -375,7 +398,9 @@ $('.lockers').twinkle({
 });
 </code>
 </pre>
-  <p>In this example the top 2 rows will always remain static.</p>
+</div>
+
+  <p>In the following example the top 2 rows will remain static.</p>
   <div class="avatars lockers clearfix">
     <div class="avatar locked">
       <img src="https://pbs.twimg.com/profile_images/2044921128/finals_bigger.png">
