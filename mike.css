@@ -7,6 +7,7 @@ body {
   color: #484848;
   font-size: 13px;
   line-height: 20px;
+  margin-top: 0px;
 }
 
 table {
@@ -52,3 +53,25 @@ td {
   margin: 0px;
 }
 
+
+/* header */
+
+.header {
+  border-bottom: 1px solid #f2f2f2;
+  padding: 10px 0px;
+  margin-bottom: 40px;
+}
+
+.github {
+  font-size: 13px;
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+  color: darkgray;
+}
+
+a:hover {
+  color: lightgray;
+}

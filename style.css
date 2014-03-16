@@ -13,10 +13,10 @@
 }
 
 .avatars {
-  max-width: 50%;
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .avatar {

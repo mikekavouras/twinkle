@@ -2,6 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
   <title>twinkle.js</title>
 
   <link href="mike.css" rel="stylesheet">
@@ -13,7 +15,12 @@
 </head>
 <body>
 
-  <h1>Twinkle.js</h1>
+  <div class="header">
+    <p><a href="http://mikekavouras.com">Mike Kavouras</a></p>
+  </div>
+
+  <h1>Twinkle.js <span class="github"><a href="http://github.com/mikekavouras/twinkle">view on github</a></span></h1>
+
   <h3>Options</h3>
 
   <table>
@@ -47,7 +54,7 @@
         <td><i>hidden</i></td>
         <td>
           An array of image sources. This array is the set of images that are initially hidden.<br>
-          <strong>default :</strong>[ ]
+          <strong>default: </strong> [ ]
         </td>
       </tr>
       <tr>
@@ -400,7 +407,7 @@ $('.swap').twinkle({
 </pre>
 </div>
 
-  <p>In the following example the top 2 rows will remain static.</p>
+  <p>In the following example the first 10 images will remain static.</p>
   <div class="avatars lockers clearfix">
     <div class="avatar locked">
       <img src="https://pbs.twimg.com/profile_images/2044921128/finals_bigger.png">
