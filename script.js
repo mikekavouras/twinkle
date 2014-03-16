@@ -28,4 +28,8 @@ $(document).ready(function() {
     hidden: hidden.slice(0),
     transition: 'swap'
   });
+
+  $('.lockers').twinkle({
+    hidden: hidden.slice(0)
+  });
 });
