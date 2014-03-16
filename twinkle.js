@@ -66,13 +66,12 @@ TwinkleImageManager.prototype = {
 
       var imageManager = new TwinkleImageManager();
 
+      imageManager.hidden = opts.hidden;
       $elem.find('img').each(function() {
         imageManager.addImage($(this).attr('src'));
       });
 
       imageManager.visible = imageManager.images; // set all initial images as visible
-
-      $.fn.twinkle.fetch(opts, imageManager); // fetch up front. could also be delayed or manual
 
       setInterval(function() {
         $.fn.twinkle.twinkle($elem, opts, imageManager);
@@ -81,10 +80,11 @@ TwinkleImageManager.prototype = {
   }
 
   $.fn.twinkle.defaults = {
-    interval: 1000,
-    transition: 'default',
+    interval: 2000,
+    transition: 'fade',
+    transitionSpeed: 1000,
     easingMethod: 'easeOutQuint',
-    fetchUrl: ''
+    hidden: []
   };
 
   $.fn.twinkle.twinkle = function($elem, opts, imageManager) {
@@ -102,7 +102,7 @@ TwinkleImageManager.prototype = {
 
     imageManager.swap(src, h); // set hidden image to visible and vice versa
 
-    if (opts.transition == "default" || opts.transition == "fade") {
+    if (opts.transition == "fade") {
       $.fn.twinkle.fadeTransition($img, h, opts);
     } else if (opts.transition == "crossfade") {
       $.fn.twinkle.crossfadeTransition($img, h, opts);
@@ -113,27 +113,6 @@ TwinkleImageManager.prototype = {
     } else {
       alert("You're attempting to use an unsupported transition type");
     }
-  }
-
-  $.fn.twinkle.fetch = function(opts, imageManager) {
-
-    /*
-    $.ajax({
-      url: opts.fetchUrl,
-      type: 'get',
-      success: function() {
-
-      },
-      error: function() {
-
-      }
-    });
-    */
-
-    var data = images; // replace this with real data
-    setTimeout(function() {
-      imageManager.addImages(data, true);
-    }, 2000);
   }
 
   $.fn.twinkle.fadeTransition = function($img, src, opts) {
