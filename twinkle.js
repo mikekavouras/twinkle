@@ -25,25 +25,6 @@ TwinkleImageManager.prototype = {
       }
     }
   },
-  addImages: function(arr, fetched) {
-    for (var i = 0; i < arr.length; i++) {
-      this.addImage(arr[i], fetched);
-    }
-  },
-  isVisible: function(src) {
-    for (var i = 0; i < this.visible.length; i++) {
-      if (src == this.visible[i])
-        return true;
-    }
-    return false;
-  },
-  isHidden: function(src) {
-    for (var i = 0; i < this.hidden.length; i++) {
-      if (src == this.hidden[i])
-        return true;
-    }
-    return false;
-  },
   swap: function(visible, hidden) {
     this.visible.remove(visible);
     this.hidden.remove(hidden);
