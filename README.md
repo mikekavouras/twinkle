@@ -3,6 +3,11 @@ twinkle.js
 
 [demo](http://mikekavouras.com/twinkle)
 
+## dependencies
+jQuery (http://jquery.com/download/)
+jQuery easing (http://gsgd.co.uk/sandbox/jquery/easing/)
+
+## options
 
 <table>
   <tr>
