@@ -41,9 +41,7 @@ TwinkleImageManager.prototype = {
       var $elem = $(this);
 
       // make sure these things are overflow hidden for animation
-      if (opts.transition == "swap" || opts.transition == "slide") {
-        $elem.find('>*').css('overflow', 'hidden');
-      }
+      $elem.find('>*').css('overflow', 'hidden');
 
       var imageManager = new TwinkleImageManager();
 
