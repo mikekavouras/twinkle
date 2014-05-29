@@ -72,7 +72,7 @@ TwinkleImageManager.prototype = {
       return; // we could do something like swap out twovisible images
     }
 
-    var $visible = $elem.find('>*:visible').not('.locked');
+    var $visible = $elem.find('>*:visible').not('.lock');
     var r1 = Math.floor(Math.random() * $visible.length);
     var r2 = Math.floor(Math.random() * imageManager.hidden.length);
     var $v = $visible.eq(r1);
