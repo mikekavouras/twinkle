@@ -9,18 +9,21 @@ $(document).ready(function() {
 
   $('.crossfade').twinkle({
     hidden: hidden.slice(0),
-    transition: 'crossfade'
+    transition: 'crossfade',
+    speed: 1200
   });
 
   $('.slide').twinkle({
     hidden: hidden.slice(0),
     transition: 'slide',
-    transitionSpeed: 1400
+    speed: 1400
   });
 
   $('.swap').twinkle({
     hidden: hidden.slice(0),
-    transition: 'swap'
+    transition: 'swap',
+    interval: 3000,
+    speed: 2000
   });
 
   $('.lockers').twinkle({

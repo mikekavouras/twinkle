@@ -4,7 +4,7 @@ twinkle.js
 [demo](http://mikekavouras.com/twinkle)
 
 ## dependencies
-* jQuery (http://jquery.com/download/) 
+* jQuery (http://jquery.com/download/)
 * jQuery easing (http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ## options
@@ -25,14 +25,14 @@ twinkle.js
     <strong>default: </strong>2000</td>
   </tr>
   <tr>
-    <td><i>transitionSpeed</i></td>
-    <td>Total duration (ms) of "twinkle" <br> 
+    <td><i>speed</i></td>
+    <td>Total duration (ms) of "twinkle" <br>
     <strong>default: </strong> 1000</td>
   </tr>
   <tr>
     <td><i>easingMethod</i></td>
     <td>
-      Easing method for "twinkle" as found at http://gsgd.co.uk/sandbox/jquery/easing/ <br> 
+      Easing method for "twinkle" as found at http://gsgd.co.uk/sandbox/jquery/easing/ <br>
       <strong>default: </strong>"easeOutQuint"
     </td>
   </tr>
@@ -60,13 +60,13 @@ twinkle.js
         'path_to_image.jpg'
       ]
     });
-    
+
 #### advanced
 
     $('#container').twinkle({
       transition: 'slide',
       interval: 3000,
-      transitionSpeed: 2000,
+      speed: 2000,
       easingMethod: 'easeOutElastic',
       direction: 'left',
       hidden: [
@@ -78,7 +78,7 @@ twinkle.js
 ## Locking
 
 If you want to "lock" an image in the grid, just give it's parent div a class of 'locked'. This particular image will always remain static. Feel free to apply this class to as many images as you please.
-    
+
     <div class="locked">
       <img src="image_path.jpg">
     </div>

@@ -41,7 +41,7 @@ TwinkleImageManager.prototype = {
       var $elem = $(this);
 
       // make sure these things are overflow hidden for animation
-      $elem.find('>*').css('overflow', 'hidden');
+      $elem.find('> *').css('overflow', 'hidden');
 
       var imageManager = new TwinkleImageManager();
 
@@ -61,7 +61,7 @@ TwinkleImageManager.prototype = {
   $.fn.twinkle.defaults = {
     interval: 2000,
     transition: 'fade',
-    transitionSpeed: 1000,
+    speed: 1000,
     easingMethod: 'easeOutQuint',
     hidden: [],
     direction: null
@@ -76,36 +76,37 @@ TwinkleImageManager.prototype = {
     var r1 = Math.floor(Math.random() * $visible.length);
     var r2 = Math.floor(Math.random() * imageManager.hidden.length);
     var $v = $visible.eq(r1);
-    var h = imageManager.hidden[r2];
+    var hsrc = imageManager.hidden[r2];
     var $img = $v.find('img');
     var src = $img.attr('src');
 
-    imageManager.swap(src, h); // set hidden image to visible and vice versa
+    imageManager.swap(src, hsrc); // set hidden image to visible and vice versa
 
     if (opts.transition == "fade") {
-      $.fn.twinkle.fadeTransition($img, h, opts);
+      $.fn.twinkle.fadeTransition($img, hsrc, opts);
     } else if (opts.transition == "crossfade") {
-      $.fn.twinkle.crossfadeTransition($img, h, opts);
+      $.fn.twinkle.crossfadeTransition($img, hsrc, opts);
     } else if (opts.transition == "slide") {
-      $.fn.twinkle.slideTransition($img, h, opts);
+      $.fn.twinkle.slideTransition($img, hsrc, opts);
     } else if (opts.transition == "swap") {
-      $.fn.twinkle.slideTransition($img, h, opts, true);
+      $.fn.twinkle.slideTransition($img, hsrc, opts, true);
     } else {
-      alert("You're attempting to use an unsupported transition type");
+      $.fn.twinkle.fadeTransition($img, hsrc, opts);
+      console.error(opts.transition + ' is unsupported. Defaulting to "fade"');
     }
   }
 
   $.fn.twinkle.fadeTransition = function($img, src, opts) {
-    $img.fadeOut(opts.transitionSpeed / 2, function() {
-      $(this).attr('src', src).fadeIn(opts.transitionSpeed / 2);
+    $img.fadeOut(opts.speed / 2, function() {
+      $(this).attr('src', src).fadeIn(opts.speed / 2);
     });
   }
 
   $.fn.twinkle.crossfadeTransition = function($img, src, opts) {
     var $otherImg = $('<img src="'+src+'">');
     $otherImg.hide().insertAfter($img);
-    $otherImg.fadeIn(opts.transitionSpeed);
-    $img.fadeOut(opts.transitionSpeed, function() {
+    $otherImg.fadeIn(opts.speed);
+    $img.fadeOut(opts.speed, function() {
       $(this).remove();
     });
   }
@@ -123,14 +124,14 @@ TwinkleImageManager.prototype = {
     $otherImg.insertAfter($img);
 
     $otherImg.css(d, start + 'px');
-    $img.animate(anim, opts.transitionSpeed / 2, opts.easingMethod, function() {
+    $img.animate(anim, opts.speed / 2, opts.easingMethod, function() {
       $(this).remove();
     });
 
     if (dir == "left" || dir == "right") {
-      $otherImg.animate({ 'left' : '0px' }, opts.transitionSpeed / 2, opts.easingMethod);
+      $otherImg.animate({ 'left' : '0px' }, opts.speed / 2, opts.easingMethod);
     } else {
-      $otherImg.animate({ 'top' : '0px' }, opts.transitionSpeed / 2, opts.easingMethod);
+      $otherImg.animate({ 'top' : '0px' }, opts.speed / 2, opts.easingMethod);
     }
   }
 
