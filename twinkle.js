@@ -92,7 +92,7 @@ TwinkleImageManager.prototype = {
       $.fn.twinkle.slideTransition($img, hsrc, opts, true);
     } else {
       $.fn.twinkle.fadeTransition($img, hsrc, opts);
-      console.error(opts.transition + ' is unsupported. Defaulting to "fade"');
+      console.error('"' + opts.transition + '" is an unsupported transition option. Defaulting to "fade"');
     }
   }
 
