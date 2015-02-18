@@ -63,6 +63,7 @@ TwinkleImageManager.prototype = {
     transition: 'fade',
     speed: 1000,
     easingMethod: 'easeOutQuint',
+    padding: 20,
     hidden: [],
     direction: null
   };
@@ -116,7 +117,7 @@ TwinkleImageManager.prototype = {
     var dirs = ['left', 'right', 'top', 'bottom'];
     var dir = dirs[Math.floor(Math.random() * dirs.length)];
     dir = opts.direction || dir;
-    var start = (dir == 'top' || dir == 'left') ? -100 : 100;
+    var start = (dir == 'top' || dir == 'left') ? -$img.width() - opts.padding : $img.width() + opts.padding;
     var d = (dir == 'top' || dir == 'bottom') ? 'top' : 'left';
     anim[d] = swap ? start + 'px' : -start + 'px';
 

@@ -23,6 +23,7 @@ $(document).ready(function() {
     hidden: hidden.slice(0),
     transition: 'swap',
     interval: 3000,
+    padding: 50,
     speed: 2000
   });
 
